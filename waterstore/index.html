@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RK Water Store — Pure Reverse Osmosis Water | Mt. Pleasant, MI</title>
+<meta name="description" content="RK Water Store in Mt. Pleasant, Michigan. Pure 10-stage reverse osmosis water at $0.50/gallon. Products, specials, business delivery, and 24-hr water teller.">
+<meta name="keywords" content="reverse osmosis water, purified water, Mt Pleasant Michigan, water store, RO water">
+<link rel="canonical" href="https://stairona.github.io/websites/waterstore/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="RK Water Store — Pure Reverse Osmosis Water | Mt. Pleasant, MI">
+<meta property="og:description" content="10-stage RO purified water at $0.50/gallon. Products, specials, business delivery, and 24-hr water teller in Mt. Pleasant, MI.">
+<meta property="og:url" content="https://stairona.github.io/websites/waterstore/">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════
+   VARIABLES & RESET
+════════════════════════════════════════ */
+:root {
+  --deep:   #04111f;
+  --navy:   #071e38;
+  --blue:   #0a4f8c;
+  --cyan:   #0ec4e8;
+  --ice:    #b8eef7;
+  --white:  #f4fafd;
+  --warn:   #e85c0d;
+  --gold:   #f0c040;
+  --green:  #2ecc71;
+  --text:   #c8dde8;
+  --muted:  #5a7a8a;
+  --card:   rgba(10,30,56,.7);
+  --border: rgba(14,196,232,.12);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════
+   PAGE SWITCHING
+════════════════════════════════════════ */
+#page-home    { display: block; }
+#page-products { display: none; }
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  display: flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+  padding: 1rem 3rem;
+  background: linear-gradient(to bottom, rgba(4,17,31,.97), rgba(4,17,31,.8));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+nav.scrolled { border-bottom-color: var(--border); }
+.nav-logo {
+  font-family:'Bebas Neue',cursive; font-size:2rem;
+  color:var(--cyan); letter-spacing:.1em;
+  cursor:pointer; user-select:none;
+}
+.nav-logo span { color:var(--white); }
+.nav-links {
+  display:flex; gap:2rem; list-style:none; align-items:center;
+}
+.nav-links a, .nav-links button {
+  color:var(--ice); text-decoration:none; font-size:.85rem;
+  letter-spacing:.08em; text-transform:uppercase;
+  background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif;
+  transition:color .2s; padding:0;
+}
+.nav-links a:hover, .nav-links button:hover { color:var(--cyan); }
+.nav-links button.active { color:var(--cyan); border-bottom:1px solid var(--cyan); padding-bottom:1px; }
+.nav-cta {
+  background:var(--cyan); color:var(--deep); padding:.55rem 1.4rem;
+  border-radius:2px; font-weight:700; font-size:.85rem; letter-spacing:.06em;
+  text-transform:uppercase; text-decoration:none; border:none; cursor:pointer;
+  font-family:'DM Sans',sans-serif; transition:background .2s;
+  display:flex; align-items:center; gap:.4rem;
+}
+.nav-cta:hover { background:var(--ice); }
+.nav-cta svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .4rem .6rem;
+  cursor: pointer;
+  color: var(--ice);
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s;
+}
+.nav-hamburger:hover { border-color: rgba(14,196,232,.4); color: var(--cyan); }
+.nav-hamburger:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.nav-hamburger svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; }
+
+@media (max-width:768px) {
+  nav { padding:1rem 1.5rem; }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(4,17,31,.98);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem 1.5rem;
+    gap: .8rem;
+  }
+  .nav-links.open { display: flex; }
+}
+
+/* ════════════════════════════════════════
+   SHARED UTILITIES
+════════════════════════════════════════ */
+.fade-up { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+.section-tag { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--cyan); margin-bottom:.8rem; }
+.section-title {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  color:var(--white); line-height:1.15; margin-bottom:1.2rem;
+}
+.section-lead { font-size:1.05rem; line-height:1.75; color:var(--text); max-width:640px; }
+.btn-primary {
+  background:var(--cyan); color:var(--deep); padding:.9rem 2.2rem;
+  border-radius:2px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  text-decoration:none; font-size:.9rem; transition:all .2s; border:none; cursor:pointer;
+  font-family:'DM Sans',sans-serif; display:inline-block;
+}
+.btn-primary:hover { background:var(--ice); transform:translateY(-2px); }
+.btn-primary:focus-visible { outline:2px solid var(--white); outline-offset:2px; }
+.btn-ghost {
+  border:1px solid rgba(14,196,232,.5); color:var(--cyan); padding:.9rem 2.2rem;
+  border-radius:2px; font-weight:500; text-transform:uppercase; letter-spacing:.08em;
+  text-decoration:none; font-size:.9rem; transition:all .2s; background:none; cursor:pointer;
+  font-family:'DM Sans',sans-serif; display:inline-block;
+}
+.btn-ghost:hover { background:rgba(14,196,232,.1); }
+.btn-ghost:focus-visible { outline:2px solid var(--cyan); outline-offset:2px; }
+
+/* Icon helper used in contamination / contact sections */
+.icon-svg {
+  width:1.6rem; height:1.6rem; flex-shrink:0;
+  stroke:currentColor; fill:none; stroke-width:1.75;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+
+/* ════════════════════════════════════════
+   HOME PAGE
+════════════════════════════════════════ */
+
+/* HERO */
+#hero {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+  padding:0 6vw;
+  position:relative; overflow:hidden;
+  background:radial-gradient(ellipse 80% 70% at 60% 50%, #072d56 0%, var(--deep) 70%);
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 65% 40%, rgba(14,196,232,.12) 0%, transparent 55%),
+    radial-gradient(circle at 30% 70%, rgba(10,79,140,.18) 0%, transparent 50%);
+}
+.bubbles { position:absolute; inset:0; z-index:0; overflow:hidden; }
+.bubble {
+  position:absolute; border-radius:50%;
+  border:1px solid rgba(14,196,232,.25);
+  animation:rise linear infinite;
+}
+@keyframes rise {
+  0%   { transform:translateY(110vh) scale(1); opacity:0; }
+  10%  { opacity:.6; }
+  90%  { opacity:.3; }
+  100% { transform:translateY(-10vh) scale(1.1); opacity:0; }
+}
+.hero-content { position:relative; z-index:1; max-width:680px; }
+.hero-tag {
+  display:inline-block;
+  background:rgba(14,196,232,.15); border:1px solid rgba(14,196,232,.4);
+  color:var(--cyan); font-size:.8rem; letter-spacing:.15em; text-transform:uppercase;
+  padding:.35rem .9rem; border-radius:2px; margin-bottom:1.5rem;
+}
+.hero-title {
+  font-family:'Bebas Neue',cursive;
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:.95; color:var(--white); letter-spacing:.03em; margin-bottom:1rem;
+}
+.hero-title em { color:var(--cyan); font-style:normal; display:block; }
+.hero-sub { font-size:1.1rem; line-height:1.7; color:var(--ice); max-width:500px; margin-bottom:2.5rem; }
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+.hero-stats {
+  display:flex; gap:3rem; margin-top:4rem;
+  padding-top:2rem; border-top:1px solid rgba(14,196,232,.15);
+  flex-wrap:wrap;
+}
+.stat-num { font-family:'Bebas Neue',cursive; font-size:2.8rem; color:var(--cyan); line-height:1; }
+.stat-label { font-size:.8rem; color:var(--text); letter-spacing:.08em; text-transform:uppercase; margin-top:.3rem; }
+
+/* HOME SECTIONS */
+#page-home section { padding:6rem 6vw; }
+
+/* CONTAMINATION */
+#contamination {
+  background:linear-gradient(135deg,#0b1c2e 0%,#0a0f1a 100%);
+  border-top:3px solid var(--warn); border-bottom:3px solid var(--warn);
+}
+.contam-header { display:flex; align-items:flex-start; gap:2rem; margin-bottom:4rem; flex-wrap:wrap; }
+.contam-header .alert-icon { font-size:3rem; color:var(--warn); flex-shrink:0; line-height:1; }
+.contam-header .alert-icon svg { width:3rem; height:3rem; stroke:var(--warn); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.contam-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+.contam-card {
+  background:rgba(232,92,13,.05); border:1px solid rgba(232,92,13,.3);
+  border-left:3px solid var(--warn); border-radius:4px; padding:1.6rem;
+  transition:transform .2s;
+}
+.contam-card:hover { transform:translateY(-3px); }
+.contam-name {
+  font-family:'Bebas Neue',cursive; font-size:1.4rem; color:var(--warn);
+  letter-spacing:.05em; margin-bottom:.5rem; display:flex; align-items:center; gap:.6rem;
+}
+.contam-name svg { width:1.3rem; height:1.3rem; stroke:var(--warn); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+.contam-desc { font-size:.88rem; line-height:1.65; color:var(--text); }
+.contam-effects { margin-top:.8rem; padding-top:.8rem; border-top:1px solid rgba(232,92,13,.2); font-size:.82rem; color:#f8a882; }
+.contam-effects strong { display:block; margin-bottom:.25rem; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--warn); }
+
+/* FILTRATION */
+#filtration { background:var(--navy); }
+.stages-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; margin-top:3rem; }
+.stage-card {
+  background:rgba(14,196,232,.04); border:1px solid rgba(14,196,232,.15);
+  border-radius:4px; padding:1.5rem; position:relative; overflow:hidden; transition:all .25s;
+}
+.stage-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan)); opacity:0; transition:opacity .25s;
+}
+.stage-card:hover { background:rgba(14,196,232,.08); transform:translateY(-3px); }
+.stage-card:hover::before { opacity:1; }
+.stage-num { font-family:'Bebas Neue',cursive; font-size:3rem; line-height:1; color:rgba(14,196,232,.15); margin-bottom:.6rem; }
+.stage-name { font-size:.95rem; font-weight:600; color:var(--cyan); margin-bottom:.4rem; }
+.stage-desc { font-size:.82rem; line-height:1.6; color:var(--text); }
+
+/* ABOUT */
+#about {
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+  background:var(--deep);
+}
+.about-img-wrap { position:relative; }
+.about-img { width:100%; border-radius:4px; filter:saturate(.9) contrast(1.05); display:block; }
+.about-img-accent {
+  position:absolute; bottom:-1.5rem; right:-1.5rem; width:60%; border-radius:4px;
+  border:3px solid var(--navy); filter:saturate(.9);
+}
+.about-badge {
+  position:absolute; top:-1.5rem; left:-1.5rem;
+  background:var(--cyan); color:var(--deep);
+  font-family:'Bebas Neue',cursive; font-size:1.1rem; letter-spacing:.08em;
+  padding:.6rem 1rem; border-radius:2px; white-space:nowrap;
+}
+.about-list { list-style:none; margin:1.5rem 0 2rem; }
+.about-list li {
+  padding:.65rem 0; border-bottom:1px solid rgba(14,196,232,.1);
+  display:flex; align-items:flex-start; gap:.8rem; font-size:.95rem;
+}
+.about-list li::before { content:'✓'; color:var(--cyan); font-weight:700; flex-shrink:0; }
+@media (max-width:768px) {
+  #about { grid-template-columns:1fr; gap:3rem; }
+  .about-img-accent { display:none; }
+}
+
+/* TELLER */
+#teller {
+  background:linear-gradient(135deg,#061424,#0a2440);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  text-align:center; padding:4rem 6vw;
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
+}
+#teller .teller-icon { color:var(--cyan); }
+#teller .teller-icon svg { width:3rem; height:3rem; stroke:var(--cyan); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+#teller h2 { font-family:'Bebas Neue',cursive; font-size:2.5rem; color:var(--cyan); letter-spacing:.05em; }
+#teller p { font-size:1rem; color:var(--text); max-width:500px; }
+
+/* SPECIALS */
+#specials { background:var(--navy); }
+.specials-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; margin-top:2rem; }
+.special-card {
+  background:linear-gradient(135deg,rgba(14,196,232,.07),rgba(10,79,140,.12));
+  border:1px solid rgba(14,196,232,.2); border-radius:4px; padding:2rem; transition:transform .2s;
+}
+.special-card:hover { transform:translateY(-4px); }
+.special-day { font-family:'Bebas Neue',cursive; font-size:2rem; color:var(--cyan); letter-spacing:.05em; }
+.special-type { font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+.special-price { font-family:'Bebas Neue',cursive; font-size:3.5rem; color:var(--white); line-height:1; }
+.special-price span { font-size:1.2rem; color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+.special-desc { font-size:.88rem; line-height:1.6; margin-top:.8rem; color:var(--text); }
+.prepaid-banner {
+  margin-top:2rem;
+  background:linear-gradient(90deg,rgba(240,192,64,.1),rgba(14,196,232,.08));
+  border:1px solid rgba(240,192,64,.35); border-radius:4px; padding:2rem;
+  display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+}
+.prepaid-icon { color:var(--gold); }
+.prepaid-icon svg { width:3rem; height:3rem; stroke:var(--gold); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.prepaid-title { font-family:'DM Serif Display',serif; font-size:1.6rem; color:var(--gold); }
+.prepaid-desc { font-size:.9rem; color:var(--text); margin-top:.3rem; }
+.prepaid-value { font-family:'Bebas Neue',cursive; font-size:2.5rem; color:var(--gold); white-space:nowrap; margin-left:auto; }
+
+/* DELIVERY */
+#delivery { background:var(--deep); }
+.delivery-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; }
+.delivery-card {
+  background:rgba(14,196,232,.04); border:1px solid rgba(14,196,232,.15);
+  border-radius:4px; padding:2rem;
+}
+.delivery-card-header { display:flex; align-items:center; gap:.8rem; margin-bottom:1rem; }
+.delivery-card-header svg { width:1.5rem; height:1.5rem; stroke:var(--cyan); fill:none; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+.delivery-card h3 { font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--white); }
+.delivery-rules { list-style:none; }
+.delivery-rules li {
+  padding:.6rem 0; border-bottom:1px solid rgba(14,196,232,.08);
+  display:flex; gap:.8rem; font-size:.9rem; line-height:1.5;
+}
+.delivery-rules li::before { content:'→'; color:var(--cyan); flex-shrink:0; }
+.delivery-unavail {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; background:rgba(14,196,232,.03); gap:.5rem;
+}
+.delivery-unavail .unavail-icon svg { width:3rem; height:3rem; stroke:var(--text); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.delivery-unavail .big { font-family:'Bebas Neue',cursive; font-size:1.8rem; color:var(--text); }
+.delivery-unavail p { font-size:.88rem; color:var(--text); max-width:220px; }
+@media (max-width:768px) { .delivery-grid { grid-template-columns:1fr; } }
+
+/* CONTACT */
+#contact { background:var(--navy); }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; align-items:start; }
+.info-items { display:flex; flex-direction:column; gap:1.5rem; }
+.info-item { display:flex; gap:1.2rem; align-items:flex-start; }
+.info-icon { flex-shrink:0; margin-top:.1rem; }
+.info-icon svg { width:1.5rem; height:1.5rem; stroke:var(--cyan); fill:none; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
+.info-label { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); margin-bottom:.25rem; }
+.info-val { font-size:1rem; color:var(--white); }
+.hours-table { width:100%; border-collapse:collapse; }
+.hours-table td { padding:.55rem .2rem; font-size:.95rem; border-bottom:1px solid rgba(14,196,232,.08); }
+.hours-table td:first-child { color:var(--text); }
+.hours-table td:last-child { color:var(--white); text-align:right; }
+.hours-table tr:last-child td { border-bottom:none; }
+@media (max-width:768px) { .contact-grid { grid-template-columns:1fr; } }
+
+/* ════════════════════════════════════════
+   PRODUCTS PAGE
+════════════════════════════════════════ */
+.prod-hero {
+  padding:6rem 4vw 3rem;
+  background:linear-gradient(135deg,#071e38 0%,#04111f 60%);
+  border-bottom:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.prod-hero::before {
+  content:'';
+  position:absolute; top:-40%; right:-10%;
+  width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle,rgba(14,196,232,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.prod-hero-tag { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--cyan); margin-bottom:.7rem; }
+.prod-hero h1 { font-family:'Bebas Neue',cursive; font-size:clamp(2.5rem,6vw,5rem); color:var(--white); letter-spacing:.04em; line-height:.95; }
+.prod-hero h1 em { color:var(--cyan); font-style:normal; }
+.prod-hero p { margin-top:1rem; font-size:1rem; color:var(--text); max-width:560px; line-height:1.7; }
+
+/* Filter bar */
+.filter-bar {
+  position:sticky; top:64px; z-index:150;
+  background:rgba(7,30,56,.97); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:.7rem 4vw; display:flex; gap:.5rem; flex-wrap:wrap; align-items:center;
+}
+.filter-btn {
+  background:transparent; border:1px solid var(--border); color:var(--text);
+  padding:.4rem 1rem; border-radius:20px; font-size:.78rem; letter-spacing:.06em;
+  text-transform:uppercase; cursor:pointer; transition:all .2s;
+  font-family:'DM Sans',sans-serif; white-space:nowrap;
+}
+.filter-btn:hover, .filter-btn.active {
+  background:var(--cyan); color:var(--deep); border-color:var(--cyan); font-weight:600;
+}
+.filter-btn:focus-visible { outline:2px solid var(--cyan); outline-offset:2px; }
+
+/* Products main */
+.prod-main { padding:3rem 4vw 5rem; }
+
+/* Category section */
+.cat-section { margin-bottom:4rem; }
+.cat-header {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;
+  padding-bottom:.8rem; border-bottom:1px solid var(--border);
+}
+.cat-icon { line-height:1; color:var(--cyan); }
+.cat-icon svg { width:1.8rem; height:1.8rem; stroke:var(--cyan); fill:none; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
+.cat-title { font-family:'Bebas Neue',cursive; font-size:1.8rem; color:var(--white); letter-spacing:.06em; }
+.cat-count { font-size:.75rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-left:auto; }
+
+/* Product grid */
+.product-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1px; background:var(--border);
+  border:1px solid var(--border); border-radius:6px; overflow:hidden;
+}
+
+/* Product card */
+.product-card {
+  background:var(--card); padding:0;
+  display:flex; flex-direction:column; transition:background .2s; position:relative;
+  cursor:default;
+}
+.product-card:hover { background:rgba(14,196,232,.06); }
+.product-img {
+  width:100%; height:160px; object-fit:cover;
+  background:rgba(14,196,232,.05); display:block; flex-shrink:0;
+}
+.product-body { padding:1.2rem 1.4rem; display:flex; flex-direction:column; gap:.4rem; flex:1; }
+.product-name { font-family:'Lora',serif; font-size:1rem; font-weight:600; color:var(--white); line-height:1.3; }
+.product-desc { font-size:.82rem; line-height:1.6; color:var(--text); flex:1; }
+.product-footer { display:flex; align-items:center; justify-content:space-between; margin-top:.6rem; gap:.5rem; flex-wrap:wrap; }
+.product-price { font-family:'Bebas Neue',cursive; font-size:1.3rem; letter-spacing:.05em; color:var(--cyan); }
+.product-price.tbd {
+  color:var(--muted); font-size:.75rem; font-family:'DM Sans',sans-serif; font-weight:400;
+  letter-spacing:.08em; border:1px dashed rgba(90,122,138,.4);
+  padding:.2rem .6rem; border-radius:20px; text-transform:uppercase;
+}
+.product-tag {
+  font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:.2rem .6rem; border-radius:20px; font-weight:500;
+}
+.tag-water   { background:rgba(14,196,232,.12); color:var(--cyan); }
+.tag-organic { background:rgba(46,204,113,.12);  color:var(--green); }
+.tag-gift    { background:rgba(240,192,64,.12);   color:var(--gold); }
+.tag-pet     { background:rgba(232,92,13,.12);    color:var(--warn); }
+
+.product-card.featured {
+  grid-column:span 2;
+  background:linear-gradient(135deg,rgba(14,196,232,.07),rgba(10,79,140,.12));
+  border-left:3px solid var(--cyan);
+}
+.product-card.featured .product-name { font-size:1.2rem; }
+.product-card.ice-card {
+  background:linear-gradient(135deg,rgba(14,196,232,.1),rgba(4,17,31,.8));
+  border:1px solid rgba(14,196,232,.3);
+}
+.product-card.ice-card .product-price { font-size:2rem; color:var(--white); }
+
+@media (max-width:600px) {
+  .product-card.featured { grid-column:span 1; }
+  .filter-bar { top:52px; }
+}
+
+.price-note {
+  margin-top:2rem; padding:1rem 1.4rem;
+  background:rgba(240,192,64,.06); border:1px solid rgba(240,192,64,.2);
+  border-radius:4px; font-size:.85rem; color:rgba(240,192,64,.8);
+  display:flex; align-items:flex-start; gap:.7rem;
+}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  background:#020d18; padding:1.8rem 4vw;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.8rem;
+  border-top:1px solid var(--border);
+}
+footer .logo { font-family:'Bebas Neue',cursive; font-size:1.3rem; color:var(--cyan); }
+footer p { font-size:.78rem; color:rgba(200,221,232,.35); }
+footer a { color:var(--cyan); text-decoration:none; font-size:.82rem; }
+
+/* ════════════════════════════════════════
+   REDUCED MOTION
+════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { transition:none; opacity:1; transform:none; }
+  .bubble { animation:none; display:none; }
+  *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo" onclick="showPage('home')" role="button" tabindex="0" aria-label="RK Water Store home">RK <span>Water Store</span></div>
+  <ul class="nav-links" id="nav-links-list" role="list">
+    <li><button onclick="showPage('home');scrollToSection('contamination')">Water Safety</button></li>
+    <li><button onclick="showPage('home');scrollToSection('filtration')">Our System</button></li>
+    <li><button onclick="showPage('home');scrollToSection('specials')">Specials</button></li>
+    <li><button onclick="showPage('home');scrollToSection('delivery')">Delivery</button></li>
+    <li><button id="nav-products-btn" onclick="showPage('products')">Products</button></li>
+    <li><button onclick="showPage('home');scrollToSection('contact')">Contact</button></li>
+  </ul>
+  <a class="nav-cta" href="tel:9893173353" aria-label="Call us at 989-317-3353">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Us
+  </a>
+  <button id="nav-hamburger" class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links-list">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════ -->
+<div id="page-home">
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Mt. Pleasant, Michigan's Purest Water</div>
+    <h1 class="hero-title">Pure Water.<br><em>Pure Life.</em></h1>
+    <p class="hero-sub">RK Water Store delivers 10-stage Reverse Osmosis purified water — removing hormones, heavy metals, chlorine, fluoride, and 200+ other contaminants found in Michigan tap water.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollToSection('filtration')">Our Filtration System</button>
+      <button class="btn-ghost" onclick="scrollToSection('contamination')">What's In Your Tap Water?</button>
+    </div>
+    <div class="hero-stats" aria-label="Key statistics">
+      <div><div class="stat-num">10</div><div class="stat-label">Filtration Stages</div></div>
+      <div><div class="stat-num">99%</div><div class="stat-label">Contaminants Removed</div></div>
+      <div><div class="stat-num">$0.50</div><div class="stat-label">Per Gallon</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">Water Teller Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTAMINATION -->
+<section id="contamination" aria-labelledby="contam-heading">
+  <div class="contam-header fade-up">
+    <div class="alert-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <div>
+      <div class="section-tag">Michigan Tap Water Alert</div>
+      <h2 class="section-title" id="contam-heading">What's Really in Your Tap Water?</h2>
+      <p class="section-lead">Michigan tap water contains dozens of contaminants that affect your hormones, brain, cardiovascular health, and development. Many are legal — but that doesn't mean they're safe.</p>
+    </div>
+  </div>
+  <div class="contam-grid">
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        Chlorine &amp; Chloramines
+      </div>
+      <div class="contam-desc">Added to municipal water as a disinfectant. Reacts with organic matter to form trihalomethanes (THMs) — known carcinogens. Also kills beneficial gut bacteria.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Disrupts gut flora, linked to bladder &amp; rectal cancers, skin irritation, respiratory issues, thyroid suppression.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Fluoride
+      </div>
+      <div class="contam-desc">Deliberately added to Michigan water at 0.7 mg/L. Accumulates in the pineal gland and bones. Recent NIH studies raise serious concerns about effects on IQ development in children.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Neurotoxicity in children, pineal gland calcification, dental/skeletal fluorosis, thyroid disruption, reduced IQ scores.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+        Estrogen &amp; Birth Control
+      </div>
+      <div class="contam-desc">Synthetic estrogens from birth control pills pass through sewage treatment essentially intact. Measurable levels found in Michigan drinking water sources.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Lowered testosterone in men, feminizing effects, disrupted puberty in children, reduced sperm count, hormonal cancers.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Testosterone Disruptors
+      </div>
+      <div class="contam-desc">A cocktail of endocrine-disrupting chemicals — atrazine, phthalates, BPA, and pharmaceutical residues — act as xeno-estrogens, suppressing androgen production.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Lowered testosterone, infertility, weight gain, fatigue, depression, loss of muscle mass, reduced libido.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        Lead &amp; Heavy Metals
+      </div>
+      <div class="contam-desc">Michigan's aging infrastructure leaches lead, copper, manganese, and arsenic. Even homes far from Flint can have lead service lines or brass fixtures leaching metals.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Irreversible brain damage in children. All heavy metals impair kidneys, raise blood pressure, and cause neurotoxicity.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        PFAS "Forever Chemicals"
+      </div>
+      <div class="contam-desc">Michigan has the highest known PFAS contamination sites in the US — 200+ locations. These man-made chemicals don't break down and accumulate in body tissues.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Thyroid disease, immune suppression, hormonal cancers, fertility problems, elevated cholesterol, childhood developmental delays.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22V12m0 0C12 7 7 5 7 5s1 4 5 7zm0 0c0-5 5-7 5-7s-1 4-5 7z"/></svg>
+        Nitrates &amp; Pesticides
+      </div>
+      <div class="contam-desc">Agricultural runoff from Michigan farms introduces nitrates and herbicides like atrazine into groundwater — especially relevant for Mt. Pleasant residents.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Atrazine disrupts hormones at very low concentrations. Nitrates cause "blue baby syndrome" and are linked to thyroid and ovarian cancers.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        Pharmaceutical Residues
+      </div>
+      <div class="contam-desc">Antibiotics, antidepressants, blood pressure medications, and chemotherapy drugs are regularly detected in municipal water. Treatment plants are not designed to remove them.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Antibiotic resistance, mood disruption, cardiovascular effects, and long-term cumulative toxicity from micro-dose exposure.</div>
+    </div>
+    <div class="contam-card fade-up">
+      <div class="contam-name">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        Microplastics &amp; Nanoplastics
+      </div>
+      <div class="contam-desc">Plastic particles are now found in virtually every water source including the Great Lakes. Nanoplastics have been detected crossing the blood-brain barrier and in human blood.</div>
+      <div class="contam-effects"><strong>Health Effects</strong>Inflammation, endocrine disruption, cellular toxicity, potential carcinogenesis; long-term research is still emerging but alarming.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTRATION -->
+<section id="filtration" aria-labelledby="filtration-heading">
+  <div class="fade-up">
+    <div class="section-tag">Our Technology</div>
+    <h2 class="section-title" id="filtration-heading">10-Stage Reverse Osmosis<br>Filtration System</h2>
+    <p class="section-lead">Our commercial-grade RO system eliminates over 99% of dissolved solids, contaminants, and impurities. Each stage targets specific threats.</p>
+  </div>
+  <div class="stages-grid">
+    <div class="stage-card fade-up"><div class="stage-num">01</div><div class="stage-name">Sediment Pre-Filter</div><div class="stage-desc">Removes rust, dirt, sand, and particulate matter 5 microns and larger.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">02</div><div class="stage-name">Granular Activated Carbon</div><div class="stage-desc">Adsorbs chlorine, chloramines, VOCs, and improves taste and odor.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">03</div><div class="stage-name">Carbon Block Filter</div><div class="stage-desc">Second-stage carbon filtration for remaining organics and fine sediment down to 1 micron.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">04</div><div class="stage-name">RO Membrane</div><div class="stage-desc">Blocks 95–99% of dissolved salts, heavy metals, fluoride, nitrates, and pharmaceuticals at the molecular level.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">05</div><div class="stage-name">Post-Carbon Polishing</div><div class="stage-desc">Final carbon stage polishes purified water, removing any residual taste or odor.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">06</div><div class="stage-name">Deionization (DI)</div><div class="stage-desc">Ion exchange resin removes remaining dissolved ions, achieving ultra-pure water near 0 TDS.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">07</div><div class="stage-name">Alkaline Remineralization</div><div class="stage-desc">Beneficial minerals (calcium, magnesium, potassium) reintroduced for proper hydration and healthy pH.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">08</div><div class="stage-name">Infrared Energy Filter</div><div class="stage-desc">Far-infrared rays energize water molecules, improving cell absorption for deeper hydration.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">09</div><div class="stage-name">Magnetic Ionization</div><div class="stage-desc">Magnetic field treatment restructures water molecules for improved bioavailability and antioxidant properties.</div></div>
+    <div class="stage-card fade-up"><div class="stage-num">10</div><div class="stage-name">UV Sterilization</div><div class="stage-desc">Ultraviolet light eliminates 99.99% of remaining bacteria, viruses, and microorganisms without chemicals.</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="about-img-wrap fade-up">
+    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=700&q=80"
+         alt="RK Water Store interior — reverse osmosis water filling station in Mt. Pleasant, MI"
+         class="about-img"
+         width="700" height="500"
+         loading="lazy">
+    <div class="about-badge" aria-hidden="true">Est. in Mt. Pleasant, MI</div>
+  </div>
+  <div class="fade-up">
+    <div class="section-tag">About RK Water Store</div>
+    <h2 class="section-title" id="about-heading">Mt. Pleasant's Source for Pure Water</h2>
+    <p class="section-lead">We're your local, independent purified water store — not a big corporation, just your neighbors committed to providing the cleanest water possible at honest prices.</p>
+    <ul class="about-list">
+      <li>Reverse Osmosis water at just $0.50 per gallon</li>
+      <li>Fill your own clean container or purchase one from us</li>
+      <li>Great for people, pets, fish tanks, and CPAP machines</li>
+      <li>Commercial-grade 10-stage filtration — same technology used by hospitals</li>
+      <li>24-hour water teller in the front window for your convenience</li>
+      <li>Business delivery available within Mt. Pleasant city limits</li>
+    </ul>
+    <button class="btn-primary" onclick="scrollToSection('contact')">Get Directions</button>
+  </div>
+</section>
+
+<!-- TELLER -->
+<div id="teller" role="complementary" aria-label="24-hour water teller info">
+  <div class="teller-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><polyline points="12 6 12 12 16 14"/></svg>
+  </div>
+  <h2>24-Hour Water Teller</h2>
+  <p>Need water after hours? Our convenient 24-hour water teller is located right in the front window — so you always have access to pure water, day or night.</p>
+</div>
+
+<!-- SPECIALS -->
+<section id="specials" aria-labelledby="specials-heading">
+  <div class="fade-up">
+    <div class="section-tag">Save More</div>
+    <h2 class="section-title" id="specials-heading">Monthly Specials &amp; Deals</h2>
+    <p class="section-lead">During the first week of every month, take advantage of our community discount days and stock up on pure water for you and your family.</p>
+  </div>
+  <div class="specials-grid">
+    <div class="special-card fade-up">
+      <div class="special-day">Tuesday</div>
+      <div class="special-type">Student Day — First Week of Month</div>
+      <div class="special-price">.35¢ <span>/ gallon</span></div>
+      <div class="special-desc">Students save big on first-week Tuesdays. Show your student ID and fill up for just 35 cents a gallon.</div>
+    </div>
+    <div class="special-card fade-up">
+      <div class="special-day">Wednesday</div>
+      <div class="special-type">Senior Day — First Week of Month</div>
+      <div class="special-price">.35¢ <span>/ gallon</span></div>
+      <div class="special-desc">Seniors receive the same deep discount on first-week Wednesdays. Stay hydrated at an unbeatable price.</div>
+    </div>
+    <div class="special-card fade-up">
+      <div class="special-day">Saturday</div>
+      <div class="special-type">Family Day — First Week of Month</div>
+      <div class="special-price">.35¢ <span>/ gallon</span></div>
+      <div class="special-desc">Bring the whole family on first-week Saturdays and load up for the week. Bring your own clean jugs or purchase one.</div>
+    </div>
+  </div>
+  <div class="prepaid-banner fade-up">
+    <div class="prepaid-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+    </div>
+    <div>
+      <div class="prepaid-title">Prepaid Promotional Card</div>
+      <div class="prepaid-desc">Purchase a prepaid card and get 100 gallons of pure RO water — just $0.40 per gallon.</div>
+    </div>
+    <div class="prepaid-value">100 gal<br>for $40</div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery" aria-labelledby="delivery-heading">
+  <div class="fade-up">
+    <div class="section-tag">Delivery Service</div>
+    <h2 class="section-title" id="delivery-heading">Business Delivery</h2>
+    <p class="section-lead">We offer free delivery to businesses within Mt. Pleasant city limits — just meet the minimums below.</p>
+  </div>
+  <div class="delivery-grid">
+    <div class="delivery-card fade-up">
+      <div class="delivery-card-header">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <h3>Business Delivery</h3>
+      </div>
+      <ul class="delivery-rules">
+        <li>Free delivery within Mt. Pleasant city limits</li>
+        <li>Water orders require a 5-gallon minimum</li>
+        <li>Ice orders require at least 10 bags per delivery</li>
+        <li>Under minimums? A 10% delivery surcharge applies</li>
+        <li>Outside city limits — call 989-317-3353 for rates</li>
+      </ul>
+    </div>
+    <div class="delivery-card delivery-unavail fade-up">
+      <div class="unavail-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="big">Residential Delivery</div>
+      <p>Not yet available. Visit us in-store or use our 24-hour water teller.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="fade-up">
+    <div class="section-tag">Visit Us</div>
+    <h2 class="section-title" id="contact-heading">Find Us in Mt. Pleasant</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="info-items fade-up">
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="info-label">Address</div>
+          <div class="info-val">1639 E. Broomfield Rd, Ste. G<br>Mt. Pleasant, MI 48858</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="info-label">Phone</div>
+          <div class="info-val"><a href="tel:9893173353" style="color:var(--cyan);text-decoration:none;">989-317-3353</a></div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-val"><a href="mailto:sales@rkwaterstore.com" style="color:var(--cyan);text-decoration:none;">sales@rkwaterstore.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:1rem;">Store Hours</h3>
+      <table class="hours-table">
+        <tr><td>Monday – Friday</td><td>10:00 AM – 6:00 PM</td></tr>
+        <tr><td>Saturday</td><td>10:00 AM – 4:00 PM</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+      </table>
+      <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:rgba(14,196,232,.06);border:1px solid rgba(14,196,232,.2);border-radius:4px;font-size:.88rem;color:var(--text);">
+        <strong style="color:var(--cyan);">24-Hour Water Teller</strong> available in the front window for after-hours access.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME CTA TO PRODUCTS -->
+<div style="background:var(--navy);padding:4rem 6vw;text-align:center;border-top:1px solid var(--border);">
+  <div class="section-tag" style="text-align:center;">Everything We Carry</div>
+  <h2 class="section-title" style="text-align:center;margin:0 auto 1rem;">Browse Our Full Product Menu</h2>
+  <p style="font-size:1rem;color:var(--text);max-width:500px;margin:0 auto 2rem;line-height:1.7;">From water containers and SIGG bottles to soy candles, greeting cards, pet treats, and more — see everything in the store.</p>
+  <button class="btn-primary" onclick="showPage('products')" style="font-size:1rem;padding:1rem 2.8rem;">View All Products</button>
+</div>
+
+</div><!-- end #page-home -->
+
+<!-- ══════════════════════════════════════
+     PAGE: PRODUCTS
+══════════════════════════════════════ -->
+<div id="page-products">
+
+<div class="prod-hero">
+  <div class="prod-hero-tag">RK Water Store — Mt. Pleasant, MI</div>
+  <h1>Our <em>Products</em><br>&amp; Menu</h1>
+  <p>Everything we carry in-store. Prices marked <span style="color:var(--muted);font-size:.9em;border:1px dashed rgba(90,122,138,.5);padding:0 .4rem;border-radius:10px;">ASK IN STORE</span> will be updated soon.</p>
+</div>
+
+<div class="filter-bar" role="toolbar" aria-label="Filter products by category">
+  <button class="filter-btn active" onclick="filterCat('all',this)">All</button>
+  <button class="filter-btn" onclick="filterCat('water',this)">Water</button>
+  <button class="filter-btn" onclick="filterCat('containers',this)">Containers</button>
+  <button class="filter-btn" onclick="filterCat('bottles',this)">Bottles</button>
+  <button class="filter-btn" onclick="filterCat('accessories',this)">Accessories</button>
+  <button class="filter-btn" onclick="filterCat('ice',this)">Ice</button>
+  <button class="filter-btn" onclick="filterCat('personal',this)">Personal Care</button>
+  <button class="filter-btn" onclick="filterCat('candles',this)">Candles</button>
+  <button class="filter-btn" onclick="filterCat('gifts',this)">Gifts</button>
+  <button class="filter-btn" onclick="filterCat('pets',this)">Pets</button>
+</div>
+
+<div class="prod-main">
+
+<!-- WATER -->
+<div class="cat-section fade-up" data-cat="water">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+    <span class="cat-title">Purified Water</span>
+    <span class="cat-count">2 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card featured">
+      <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80" alt="Reverse osmosis water dispenser" class="product-img" loading="lazy" width="600" height="160">
+      <div class="product-body">
+        <div class="product-name">Reverse Osmosis Purified Water — Per Gallon</div>
+        <div class="product-desc">10-stage RO filtered water. Fill your own clean container or purchase one in-store. Free of chlorine, fluoride, heavy metals, pharmaceuticals, and 200+ other contaminants. Great for people, pets, and CPAP machines.</div>
+        <div class="product-footer"><div class="product-price">$0.50 / gal</div><span class="product-tag tag-water">RO Purified</span></div>
+      </div>
+    </div>
+    <div class="product-card featured">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Prepaid promotional card for water store" class="product-img" loading="lazy" width="600" height="160">
+      <div class="product-body">
+        <div class="product-name">Prepaid Promotional Card — 100 Gallons</div>
+        <div class="product-desc">Pre-purchase 100 gallons at a discounted rate. Perfect for families and businesses. Never run out of pure water — fill up anytime during store hours or at the 24-hr teller.</div>
+        <div class="product-footer"><div class="product-price">$40.00</div><span class="product-tag tag-water">Best Value</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ICE -->
+<div class="cat-section fade-up" data-cat="ice">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+    <span class="cat-title">Purified Ice</span>
+    <span class="cat-count">1 item</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card ice-card">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&q=80" alt="Bag of purified ice" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">Purified Ice — 8 lb Bag</div>
+        <div class="product-desc">Made from the same RO purified water we sell by the gallon. Cleaner, clearer, and better-tasting than regular commercial ice. Available in the in-store freezer.</div>
+        <div class="product-footer"><div class="product-price">$3.00</div><span class="product-tag tag-water">Purified</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTAINERS -->
+<div class="cat-section fade-up" data-cat="containers">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+    <span class="cat-title">Water Containers &amp; Dispensers</span>
+    <span class="cat-count">6 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="1-gallon BPA-free water jug with handle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">1-Gallon BPA-Free Water Jug (Handled)</div>
+        <div class="product-desc">Blue BPA-free plastic jug with ergonomic handle and carry strap. Perfect for personal use, gym, or the office.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">BPA-Free</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" alt="3-gallon blue plastic water jug" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">3-Gallon Blue Plastic Water Jug</div>
+        <div class="product-desc">Standard blue BPA-free polycarbonate jug. Fill at the store or 24-hr teller. Lightweight and easy to carry.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">BPA-Free</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1614632537190-23e4e3e61fba?auto=format&fit=crop&w=400&q=80" alt="5-gallon blue plastic water jug" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">5-Gallon Blue Plastic Water Jug</div>
+        <div class="product-desc">Standard 5-gallon BPA-free jug compatible with most countertop and floor-standing water dispensers.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">BPA-Free</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?auto=format&fit=crop&w=400&q=80" alt="White ceramic water crock with spigot" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">Ceramic Water Crock with Spigot</div>
+        <div class="product-desc">Classic white ceramic water crock with red stripe detailing and bottom-mount spigot. Holds a standard 5-gallon jug inverted. Elegant and chemical-free.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Ceramic</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?auto=format&fit=crop&w=400&q=80" alt="Brio countertop water dispenser" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">Brio Water Dispenser</div>
+        <div class="product-desc">Countertop or floor-standing electric water cooler/dispenser. Compatible with 3 and 5-gallon bottles. Hot and cold water options. Multiple units in stock.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Electric</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?auto=format&fit=crop&w=400&q=80" alt="Bottom-load water cooler dispenser" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body">
+        <div class="product-name">Water Cooler / Bottom-Load Dispenser</div>
+        <div class="product-desc">Freestanding bottom-loading water cooler. No heavy lifting required. Dispenses hot and cold water from a hidden bottom compartment.</div>
+        <div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Floor Stand</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTLES -->
+<div class="cat-section fade-up" data-cat="bottles">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+    <span class="cat-title">Reusable Water Bottles</span>
+    <span class="cat-count">11+ styles</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="SIGG Switzerland silver aluminum water bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Switzerland Bottle — Silver (Plain)</div><div class="product-desc">Classic Swiss-made aluminum bottle. Lightweight, durable, BPA-free lining. Carabiner clip lid.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=400&q=80" alt="SIGG red aluminum bottle with paw print design" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Red w/ Paw Print</div><div class="product-desc">SIGG aluminum bottle in vibrant red with paw print design. Perfect for pet lovers and outdoor enthusiasts.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=400&q=80" alt="SIGG white polka dot aluminum bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — White Polka Dot</div><div class="product-desc">White SIGG aluminum bottle with black polka dot pattern. Fun and playful design, same premium Swiss construction.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1613750963399-e14d8e5e3cbb?auto=format&fit=crop&w=400&q=80" alt="SIGG teal floral aluminum bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Teal Floral</div><div class="product-desc">Teal SIGG aluminum bottle with white floral/daisy pattern. Eye-catching color with botanical design.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="SIGG black geometric pattern aluminum bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Black Geometric</div><div class="product-desc">SIGG aluminum bottle in black with geometric diamond pattern. Sleek and modern, ideal for everyday carry.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1613750963399-e14d8e5e3cbb?auto=format&fit=crop&w=400&q=80" alt="SIGG navy floral aluminum bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Navy Floral</div><div class="product-desc">Deep navy SIGG bottle with white botanical floral pattern. Elegant and refined everyday carry.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=400&q=80" alt="SIGG rose gold purple floral premium bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Rose Gold / Purple Floral</div><div class="product-desc">Premium large SIGG bottle in rose gold with ornate floral etching. Marked "Swiss Made." A standout piece.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=400&q=80" alt="SIGG red maroon large floral bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Red/Maroon Floral (Large)</div><div class="product-desc">Large-format SIGG bottle in deep red/maroon with detailed botanical pattern. Great for active lifestyles.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80" alt="Dark green stainless steel insulated slim tumbler" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Stainless Steel Slim Tumbler — Dark Green</div><div class="product-desc">Slim stainless steel insulated bottle in dark olive green. Keeps beverages cold or hot for hours.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Insulated</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="1-gallon BPA-free jug with carrying strap" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">1-Gallon BPA-Free Jug w/ Carrying Strap</div><div class="product-desc">Large 1-gallon blue BPA-free jug with ergonomic top handle and removable carrying strap. Great for gym or hiking.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">1 Gallon</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="SIGG Switzerland bottles — additional styles" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Bottle — Additional Styles</div><div class="product-desc">We carry a rotating selection of SIGG Switzerland bottles in various patterns and colors. Ask in-store for current designs.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Swiss Made</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESSORIES -->
+<div class="cat-section fade-up" data-cat="accessories">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M2 12h2M20 12h2M17.66 17.66l-1.41-1.41M6.34 17.66l1.41-1.41"/></svg></span>
+    <span class="cat-title">Water Accessories &amp; Maintenance</span>
+    <span class="cat-count">11 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=400&q=80" alt="H2Ok water cooler cleaner 3-pack" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">H2Ok Water Cooler Cleaner (3-Pack)</div><div class="product-desc">Sanitizing solution to clean and deodorize water coolers and dispensers. Easy no-rinse formula.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Maintenance</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" alt="Brio Bottle Mate jug handle carrier" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Brio Bottle Mate — Jug Handle Carrier</div><div class="product-desc">Ergonomic handle that snaps onto 3 and 5-gallon water jugs for easy lifting and carrying.</div><div class="product-footer"><div class="product-price">$8.99</div><span class="product-tag tag-water">Brio</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=400&q=80" alt="Brio dispenser valve replacement part" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Brio Dispenser Valve — Replacement</div><div class="product-desc">Replacement spigot/valve for Brio water dispensers. Easy push-fit installation. Fits standard Brio 3–5 gallon models.</div><div class="product-footer"><div class="product-price">$7.99</div><span class="product-tag tag-water">Brio</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=400&q=80" alt="SIGG Kidz Grip children's bottle handle attachment" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">SIGG Kidz Grip — Children's Handle</div><div class="product-desc">Colorful clip-on handle for SIGG 0.3L and 0.4L bottles. Makes it easy for small hands to hold. BPA-free.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">SIGG Kids</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=400&q=80" alt="Alkaline water filter replacement cartridges" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Alkaline Water Filter Cartridges</div><div class="product-desc">Replacement alkaline filter cartridges that add beneficial minerals and raise the pH of your drinking water.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Alkaline</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1564419320408-38e235f94f3c?auto=format&fit=crop&w=400&q=80" alt="Rainshow'r inline shower filter" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Rainshow'r Shower Filter</div><div class="product-desc">Inline shower filter that removes chlorine, chloramines, and other contaminants. Better for skin, hair, and lungs.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Shower Filter</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=400&q=80" alt="Pristine water purification treatment drops" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Pristine Water Treatment Drops</div><div class="product-desc">Portable water purification drops. Ideal for camping, travel, and emergency preparedness.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Purification</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=400&q=80" alt="Bedol The Drop water-powered desk clock" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Bedol "The Drop" Water-Powered Clock</div><div class="product-desc">Novelty desk and travel alarm clock powered entirely by water — no batteries needed. Eco-friendly conversation piece.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Eco Gift</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" alt="The Brew Hauler neoprene growler carrier bag" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">The Brew Hauler — Growler Carrier Bag</div><div class="product-desc">Heavy-duty neoprene bag for carrying glass growlers and large bottles safely. Padded, shoulder strap, easy-grip handle.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-water">Carrier</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1605371924599-2d0365da1ae0?auto=format&fit=crop&w=400&q=80" alt="Premium hot and cold insulated thermal bag" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Premium Thermal Bag — Hot &amp; Cold</div><div class="product-desc">Heavy-duty insulated bag keeps items hot, cold, or frozen up to 3 hours. Reusable, waterproof, and washable.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Insulated</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80" alt="100% bamboo reusable eco tote bags" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">100% Bamboo Reusable Tote Bags</div><div class="product-desc">Eco-friendly tote bags made from natural bamboo fabric. Naturally antibacterial and biodegradable.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Eco</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONAL CARE -->
+<div class="cat-section fade-up" data-cat="personal">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span>
+    <span class="cat-title">Personal Care — Kiss My Face</span>
+    <span class="cat-count">8 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face organic lip balm sliced peach SPF" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Lip Balm — Sliced Peach (Organic)</div><div class="product-desc">USDA certified organic lip balm with SPF. Made with natural and organic ingredients. Moisturizing and sun-protective.</div><div class="product-footer"><div class="product-price">$3.17</div><span class="product-tag tag-organic">Organic</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf0e21?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face mango SPF lip balm" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Lip Balm — Mango</div><div class="product-desc">SPF lip balm with tropical mango flavor. Natural and organic ingredients, keeps lips soft and protected.</div><div class="product-footer"><div class="product-price">$3.99</div><span class="product-tag tag-organic">Organic</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf0e21?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face coconut pineapple SPF lip balm" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Lip Balm — Coconut Pineapple</div><div class="product-desc">SPF lip balm with coconut pineapple scent. Tropical, moisturizing, and naturally formulated.</div><div class="product-footer"><div class="product-price">$3.79</div><span class="product-tag tag-organic">Organic</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf0e21?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face cranberry orange SPF lip balm" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Lip Balm — Cranberry Orange</div><div class="product-desc">SPF cranberry orange lip balm. Antioxidant-rich formula with organic ingredients and sun protection.</div><div class="product-footer"><div class="product-price">$3.99</div><span class="product-tag tag-organic">Organic</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face lavender chamomile natural liquid soap" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Lavender &amp; Chamomile Soap</div><div class="product-desc">Natural liquid soap with calming lavender and chamomile. Sulfate-free, paraben-free. Pump bottle.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Natural</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face 2-in-1 natural shampoo and conditioner" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face 2-in-1 Shampoo + Conditioner</div><div class="product-desc">All-natural 2-in-1 shampoo and conditioner. No parabens, sulfates, or synthetic fragrances.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Natural</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face herbal neem personal care product" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face Herbal Neem Product</div><div class="product-desc">Neem-based herbal personal care product. Known for antibacterial and antifungal properties.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Herbal</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=400&q=80" alt="Kiss My Face 16oz case for resale wholesale" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Kiss My Face 16 oz — Case for Resale</div><div class="product-desc">Purchase Kiss My Face 16 oz products by the case for resale. Available to businesses and resellers.</div><div class="product-footer"><div class="product-price">$15.40 / case</div><span class="product-tag tag-organic">Wholesale</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CANDLES -->
+<div class="cat-section fade-up" data-cat="candles">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="6"/><path d="M12 6c0 0-4 4-4 8a4 4 0 008 0c0-4-4-8-4-8z"/><line x1="12" y1="18" x2="12" y2="22"/></svg></span>
+    <span class="cat-title">Beanpod Soy Candles</span>
+    <span class="cat-count">5 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=400&q=80" alt="Beanpod soy candle large glass jar" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Beanpod Soy Candle — Large Jar</div><div class="product-desc">Real soy wax candle in a glass jar. Burns cleaner and longer than paraffin. Multiple scents available.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Real Soy</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=400&q=80" alt="Beanpod soy candle medium glass jar" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Beanpod Soy Candle — Medium Jar</div><div class="product-desc">Mid-size soy jar candle. Great for bathrooms, bedrooms, or as a gift. Same clean-burning formula.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Real Soy</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1574673584012-c8e6a9c58b82?auto=format&fit=crop&w=400&q=80" alt="Beanpod soy wax melts tarts boxed set" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Beanpod Soy Wax Melts / Tarts</div><div class="product-desc">Scented soy wax melts in boxed sets. Use with any standard wax warmer. Long-lasting fragrance.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Wax Melts</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=400&q=80" alt="Beanpod candle gift set presentation box" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Beanpod Candle Gift Set</div><div class="product-desc">Curated candle gift set — perfect for gifting. Includes a selection of scents in a presentation box.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Gift Set</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&q=80" alt="Beanpod liquid candle scented oil amber bottle" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Beanpod Liquid Candle / Scented Oil</div><div class="product-desc">Tall amber glass bottle of scented liquid candle or fragrance oil. Elegant addition to any space.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Scented Oil</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GIFTS -->
+<div class="cat-section fade-up" data-cat="gifts">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+    <span class="cat-title">Gifts, Cards &amp; Novelties</span>
+    <span class="cat-count">8 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card featured">
+      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80" alt="Lovepop 3D pop-up laser-cut greeting cards" class="product-img" loading="lazy" width="600" height="160">
+      <div class="product-body"><div class="product-name">Lovepop 3D Pop-Up Greeting Cards</div><div class="product-desc">Premium laser-cut 3D pop-up greeting cards by Lovepop. Stunning paper engineering that reveals a detailed sculpture when opened. Dozens of designs — florals, patriotic, holidays, and more. Includes envelope.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Lovepop</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80" alt="Satya Nag Champa authentic incense sticks from India" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Satya Nag Champa Incense</div><div class="product-desc">Authentic Satya Nag Champa incense sticks from Bangalore, India. The world's most recognized incense scent.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Incense</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80" alt="Additional incense sticks various brands and scents" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Incense Sticks — Additional Brands</div><div class="product-desc">Additional incense stick varieties and brands. Various scents available. Ask in-store for current selection.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Incense</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=400&q=80" alt="Soccer ball novelty ceramic coffee mug" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Soccer Ball Ceramic Mug</div><div class="product-desc">Novelty ceramic coffee mug shaped and painted to look like a soccer ball. Great gift for the soccer fan in your life.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Novelty</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=400&q=80" alt="Soccer ball decorative coin bank figurine" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Soccer Ball Coin Bank / Figurine</div><div class="product-desc">Decorative soccer ball-shaped coin bank or figurine. Fun gift for kids and soccer fans alike.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Novelty</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=400&q=80" alt="Burt's Bees all-natural men's travel grooming kit" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Burt's Bees Men's Travel Kit</div><div class="product-desc">All-natural men's personal care travel kit. Travel-size grooming essentials in a reusable case. Great gift.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-organic">Burt's Bees</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80" alt="Purple printed reusable eco tote bag" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Purple Printed Reusable Tote Bag</div><div class="product-desc">Reusable fabric tote bag in purple with decorative print. Lightweight and foldable. Eco-friendly shopping bag.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Eco Bag</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=400&q=80" alt="Red insulated backpack cooler bag with padded straps" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Red Insulated Backpack / Cooler Bag</div><div class="product-desc">Insulated soft-sided backpack in red. Keeps food and drinks cool. Padded backpack straps for hands-free carrying.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-gift">Insulated</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PETS -->
+<div class="cat-section fade-up" data-cat="pets">
+  <div class="cat-header">
+    <span class="cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span>
+    <span class="cat-title">Pet Products</span>
+    <span class="cat-count">3 items</span>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80" alt="The Bone Company all-natural fresh-baked dog treats" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">The Bone Company — All-Natural Dog Treats</div><div class="product-desc">Fresh-baked all-natural dog treats. No artificial colors, flavors, or preservatives. Available individually or in display box sets.</div><div class="product-footer"><div class="product-price">$2.00 + tax</div><span class="product-tag tag-pet">All Natural</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80" alt="Barnyard Buddies gourmet farm-inspired dog treats" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Barnyard Buddies — Gourmet Dog Treats</div><div class="product-desc">Premium gourmet dog treats made with wholesome, farm-inspired ingredients. Available in assorted varieties.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-pet">Gourmet</span></div></div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80" alt="Yum Run all-natural dog treats for active dogs" class="product-img" loading="lazy" width="400" height="160">
+      <div class="product-body"><div class="product-name">Yum Run — All-Natural Dog Treats</div><div class="product-desc">All-natural dog treats for active dogs. Clean ingredients, no fillers. Great for training or rewarding your companion.</div><div class="product-footer"><div class="product-price tbd">Ask In Store</div><span class="product-tag tag-pet">All Natural</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="price-note fade-up">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  <span>Prices marked <strong>"Ask In Store"</strong> will be updated soon. Call <a href="tel:9893173353" style="color:var(--gold);">989-317-3353</a> or email <a href="mailto:sales@rkwaterstore.com" style="color:var(--gold);">sales@rkwaterstore.com</a> for current pricing on any item.</span>
+</div>
+
+</div><!-- end .prod-main -->
+</div><!-- end #page-products -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">RK Water Store, LLC</div>
+  <p>© <span id="footer-year"></span> RK Water Store, LLC &middot; 1639 E. Broomfield Rd Ste. G &middot; Mt. Pleasant, MI 48858</p>
+  <a href="mailto:sales@rkwaterstore.com">sales@rkwaterstore.com</a>
+</footer>
+
+<script>
+/* ── YEAR ── */
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* ── HAMBURGER ── */
+const hamburger = document.getElementById('nav-hamburger');
+const navLinks  = document.querySelector('.nav-links');
+hamburger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* ── PAGE SWITCHER ── */
+function showPage(page) {
+  document.getElementById('page-home').style.display     = page === 'home'     ? 'block' : 'none';
+  document.getElementById('page-products').style.display = page === 'products' ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('nav-products-btn').classList.toggle('active', page === 'products');
+  observeFadeUps();
+}
+
+function scrollToSection(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 80);
+}
+
+/* ── BUBBLES ── */
+const bc = document.getElementById('bubbles');
+for (let i = 0; i < 25; i++) {
+  const b = document.createElement('div');
+  b.className = 'bubble';
+  const size = Math.random() * 60 + 10;
+  b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;bottom:-${size}px;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*15}s;opacity:${Math.random()*0.4+0.1};`;
+  bc.appendChild(b);
+}
+
+/* ── SCROLL ANIMATION ── */
+let fadeObserver;
+function observeFadeUps() {
+  if (fadeObserver) fadeObserver.disconnect();
+  fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+}
+observeFadeUps();
+
+/* ── NAV SCROLL BORDER ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ── PRODUCT FILTER ── */
+function filterCat(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cat-section').forEach(sec => {
+    sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

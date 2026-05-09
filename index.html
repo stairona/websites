@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sites by Nicolas / stairona</title>
+<meta name="description" content="A collection of web projects by Nicolas Aguirre (stairona).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #04111f;
+  --navy: #071e38;
+  --cyan: #0ec4e8;
+  --ice:  #b8eef7;
+  --white: #f4fafd;
+  --text: #c8dde8;
+  --border: rgba(14,196,232,.15);
+  --card: rgba(10,30,56,.75);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+.hub { max-width: 700px; width: 100%; }
+.hub-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--white);
+  letter-spacing: .05em;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.hub-title span { color: var(--cyan); }
+.hub-sub {
+  font-size: .95rem;
+  color: var(--text);
+  margin-bottom: 3rem;
+  letter-spacing: .03em;
+}
+.site-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.site-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background .2s, border-color .2s, transform .2s;
+  cursor: pointer;
+}
+.site-card:hover {
+  background: rgba(14,196,232,.08);
+  border-color: rgba(14,196,232,.4);
+  transform: translateX(4px);
+}
+.site-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+.site-icon {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(14,196,232,.1);
+  border-radius: 4px;
+  color: var(--cyan);
+}
+.site-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.site-name { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: .2rem; }
+.site-desc { font-size: .83rem; color: var(--text); line-height: 1.5; }
+.site-arrow {
+  margin-left: auto;
+  color: var(--cyan);
+  opacity: .5;
+  flex-shrink: 0;
+  transition: opacity .2s, transform .2s;
+}
+.site-card:hover .site-arrow { opacity: 1; transform: translateX(3px); }
+.site-arrow svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+footer {
+  margin-top: 3rem;
+  font-size: .75rem;
+  color: rgba(200,221,232,.3);
+  text-align: center;
+}
+footer a { color: var(--cyan); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="hub">
+  <h1 class="hub-title">Sites by <span>stairona</span></h1>
+  <p class="hub-sub">A collection of web projects by Nicolas Aguirre</p>
+
+  <nav class="site-list" aria-label="Site directory">
+
+    <a class="site-card" href="https://stairona.github.io/" target="_blank" rel="noopener noreferrer">
+      <div class="site-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div>
+        <div class="site-name">Developer Portfolio</div>
+        <div class="site-desc">Software projects, GitHub repos, and open-source work by Nicolas Aguirre.</div>
+      </div>
+      <div class="site-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <a class="site-card" href="waterstore/">
+      <div class="site-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+      </div>
+      <div>
+        <div class="site-name">RK Water Store</div>
+        <div class="site-desc">Pure reverse osmosis water — Mt. Pleasant, MI. Products, specials, and delivery info.</div>
+      </div>
+      <div class="site-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+  </nav>
+
+  <footer>
+    <p>Built by <a href="https://github.com/stairona" target="_blank" rel="noopener noreferrer">stairona</a> &mdash; <span id="yr"></span></p>
+  </footer>
+</div>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
